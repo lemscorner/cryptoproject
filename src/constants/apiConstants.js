@@ -1,0 +1,1 @@
+export const ccAPI = "https://min-api.cryptocompare.com/data";

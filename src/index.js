@@ -2,8 +2,12 @@ import React from "react";
 import { render } from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import configureStore, { history } from "./store/configureStore";
-
 import Root from "./components/Root";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
+import "../node_modules/toastr/build/toastr.min.css";
+import "../node_modules/font-awesome/css/font-awesome.css";
+import "../node_modules/jquery/dist/jquery.min.js";
 import "./styles/styles.scss";
 require("./favicon.ico");
 const store = configureStore();
