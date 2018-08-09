@@ -16,6 +16,18 @@ class CCAPI {
       .then(helper.parseJSON);
   }
 
+  static getExchangeRate(coin, currencies) {
+    let endpoint = ccMethods.exchangerate;
+    endpoint = endpoint.replace("$coin", coin);
+    endpoint = endpoint.replace("$curr", currencies);
+
+    let url = apiURL.ccAPI + endpoint;
+
+    return fetch(url)
+      .then(helper.checkStatus)
+      .then(helper.parseJSON);
+  }
+
 }
 
 export default CCAPI;

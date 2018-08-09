@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../../../styles/header.scss";
 
 const Header = () => {
   return (
-    <nav className="navbar">
-      <span>Header contents here</span>
-    </nav>
+    <div className="header">
+      <h1>Crypto Check</h1>
+      <h4>A test crypto site</h4>
+    </div>
   );
 };
 

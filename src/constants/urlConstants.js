@@ -1,0 +1,1 @@
+export const cryptocompareBaseURL = "https://www.cryptocompare.com";

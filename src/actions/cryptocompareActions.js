@@ -14,6 +14,18 @@ export function getCoinListBegin() {
   return { type: types.CC_COINLIST_BEGIN };
 }
 
+export function getExchangeRateSuccess(result) {
+  return { type: types.CC_GETPRICE_SUCCESS, result };
+}
+
+export function getExchangeRateBegin() {
+  return { type: types.CC_GETPRICE_BEGIN };
+}
+
+export function getExchangeRateFail() {
+  return { type: types.CC_GETPRICE_FAIL };
+}
+
 export function getCoinList() {
   return function(dispatch) {
     dispatch(getCoinListBegin());
@@ -24,7 +36,22 @@ export function getCoinList() {
       })
       .catch(message => {
         log.toastError("getCoinList Error", message);
-        console.log(message);
+        dispatch(getCoinListFail());
       });
   };
+}
+
+export function getExchangeRate(coin, currencies) {
+  return function(dispatch) {
+    dispatch(getExchangeRateBegin());
+    return CCAPI.getExchangeRate(coin, currencies)
+      .then(result => {
+        log.toastOk("getExchangeRate OK", "Received data from cryptocompare!");
+        dispatch(getExchangeRateSuccess(result));
+      })
+      .catch(message => {
+        log.toastError("getExchangeRate Error", message);
+        dispatch(getExchangeRateFail());
+      })
+  }
 }

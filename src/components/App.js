@@ -8,6 +8,8 @@ import HomePage from "../components/Main/HomePage";
 import NotFoundPage from "./NotFoundPage";
 import Footer from "../components/Common/Footer/Footer";
 import Header from "../components/Common/Header/Header";
+import Sidebar from "../components/Sidebar/Sidebar";
+import "../styles/sidebar.scss";
 class App extends React.Component {
   render() {
     return (
@@ -15,10 +17,10 @@ class App extends React.Component {
         <div className="container">
           <Header />
           <div className="row main-content">
-            <div className="col">
-              Other contents here
+            <div className="col sidebar">
+              <Sidebar />
             </div>
-            <div className="col-9">
+            <div className="col-9 right-content">
               <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/home" component={HomePage} />

@@ -4,6 +4,7 @@ import * as log from "../helpers/toastrHelper";
 
 const initState = Immutable({
   Coins: [],
+  ExchangeRates: [],
   loading: false,
   error: false,
   fetching: "Not Started"
@@ -33,6 +34,28 @@ export default function cryptocompareReducer(state = initState, action = {}) {
         Coins: action.result.Data,
         loading: false,
         fetching: "Done"
+      });
+    }
+
+    case types.CC_GETPRICE_BEGIN: {
+      log.toastInfo("Please wait.", "Pulling data from cryptocompare...");
+      return state.merge({
+        loading: true
+      })
+    }
+
+    case types.CC_GETPRICE_SUCCESS: {
+      return state.merge({
+        ExchangeRates: action.result,
+        loading: false,
+        error: false
+      });
+    }
+
+    case types.CC_GETPRICE_FAIL: {
+      return state.merge({
+        loading: false,
+        error: true
       });
     }
 

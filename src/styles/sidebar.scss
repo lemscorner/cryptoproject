@@ -1,0 +1,42 @@
+$sidebarbg: white;
+$sidebar-border: #5d99c6;
+$hover-color:#90caf9;
+
+.sidebar {
+  background-color: $sidebarbg;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  display: flex;
+  flex-direction: column;
+}
+
+ul.nav.flex-column {
+  list-style: none;
+  padding: 0px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.nav-item:hover {
+  background-color: $hover-color;
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.nav-item .active {
+  background-color: $hover-color;
+}
+
+.nav-item {
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $sidebar-border;
+  cursor: pointer;  
+}
