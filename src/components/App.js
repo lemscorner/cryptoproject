@@ -10,6 +10,7 @@ import Footer from "../components/Common/Footer/Footer";
 import Header from "../components/Common/Header/Header";
 import Sidebar from "../components/Sidebar/Sidebar";
 import "../styles/sidebar.scss";
+import "../styles/app.scss";
 class App extends React.Component {
   render() {
     return (
