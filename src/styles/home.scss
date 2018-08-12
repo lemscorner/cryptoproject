@@ -1,5 +1,5 @@
 .selector-rows {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .coin-info-container {
@@ -13,11 +13,21 @@
   margin-right: 10px;
 }
 
+.right-content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.row-exchange-info {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+}
+
 .coin-exchange-container {
   border: 5px solid #5d99c6;
-  padding: 10px;
-  flex-grow: 1;
-  margin-left: 5px;
+  padding: 20px;
+  width: 100%;
   background-color: white;
 }
 

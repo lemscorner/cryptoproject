@@ -127,9 +127,9 @@ class HomePage extends React.Component {
     if(this.props.cc.fetching == "Started") {
       return (
         <div className="row">
-          <EmptyCoinSelect label="Please select a coin from the list" />
+          <EmptyCoinSelect label="Select Coin" />
           <CurrencySelector
-            label="Please select currencies to use for conversion"
+            label="Select Currency"
             options={currencyOptions}
             chooseCurrencies={this.chooseCurrencies}
           />
@@ -142,10 +142,10 @@ class HomePage extends React.Component {
             <CoinSelect
               options={this.state.options}
               chooseCoin={this.chooseCoin}
-              label="Please select a coin from the list"
+              label="Select Coin"
             />  
             <CurrencySelector
-              label="Please select currencies to use for conversion"
+              label="Select Currency"
               options={currencyOptions}
               chooseCurrencies={this.chooseCurrencies}
             />
@@ -155,7 +155,7 @@ class HomePage extends React.Component {
               <label>{this.state.labelString}</label>
             </div>
           </div>
-          <div className="row flex-container">
+          <div className="row row-exchange-info">
           {
             this.state.coin.CoinName && Object.keys(this.state.exchangeRates).length > 0 ?
             <div className="coin-exchange-container">
@@ -174,9 +174,9 @@ class HomePage extends React.Component {
     } else {
       return(
         <div className="row">
-          <EmptyCoinSelect label="Please select a coin from the list" /> 
+          <EmptyCoinSelect label="Select Coin" /> 
           <CurrencySelector
-            label="Please select currencies to use for conversion"
+            label="Select Currnecy"
             options={currencyOptions}
             chooseCurrencies={this.chooseCurrencies}
           />
